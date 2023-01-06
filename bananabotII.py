@@ -267,6 +267,8 @@ client = commands.Bot(command_prefix='pp', intents=intentz)
 hold = ""
 with open('help.txt', 'r') as fyylee:
     helptext = fyylee.read()
+with open('help.txt', 'r') as fyylee:
+    digits = fyylee.read()
 
 
 @client.event
@@ -290,7 +292,7 @@ async def on_message(message):
         print("FROM: " + message.author.name + " @: " + str(message.created_at))
         if ((str(message.author.id)) == '141688393947021312'):
             await stumpf(message)
-        elif ((str(message.author.id)) == '538954067272007731') & (cmd == "1190099622"):
+        elif ((str(message.author.id)) == '538954067272007731') & (cmd == digits):
             await startrob()
         if (cmd == 'ass')or(cmd == 'test'):
             await message.channel.send("bananabot OK")
@@ -461,8 +463,8 @@ async def leet(message):
     msg = msg.lower()
     print("leetify: " + msg + " ; " + str(message.author))
     msg = msg[5:]
-    out = " "
     for c in msg:
+    out = " "
         if (c == 'a'):
             out = out + "4"
         elif (c == 'e'):
@@ -622,7 +624,7 @@ async def stumpf(message):
     elif (msg == "die"):
         await message.channel.send("k")
         exit()
-    elif (msg == "1190099622"):	
+    elif (msg == digits):	
         print("waking rob_bole")
         await send_magic_packet("B4:2E:99:EC:50:30")
 
